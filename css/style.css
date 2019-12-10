@@ -18,6 +18,11 @@
     align-items: center;
 }
 
+table, th, td {
+    border:1px solid darkblue;
+    border-radius:5px;
+    padding:5;
+}
 li .navbar {
     border: 0px;
     width: 100%;
