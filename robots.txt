@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /image/*.jpg$
+Allow: /image/*.png$
+Allow: /image/*.ico$
+Disallow: /*.html
+Disallow: /*.html$
