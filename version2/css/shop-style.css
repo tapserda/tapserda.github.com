@@ -1,0 +1,161 @@
+/* Global */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  background: linear-gradient(to bottom, #000000, #1e0037);
+  color: #ffffff;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* Parallax Background */
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.02), transparent 70%),
+              radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.015), transparent 80%);
+  animation: moveClouds 120s linear infinite;
+  z-index: -1;
+  filter: blur(70px);
+  opacity: 0.3;
+}
+
+@keyframes moveClouds {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+/* Scroll Snap Sections */
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  padding: 60px 15px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Navbar */
+.bg-darkpurple {
+  background-color: #1a002d !important;
+}
+.logo-icon {
+  width: 40px;
+  height: auto;
+}
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Product Cards */
+.product-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+.product-card img {
+  border-radius: 15px;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+/* Premium Section */
+.bg-premium {
+  background-color: #10001c;
+}
+.carousel-inner img {
+  border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Footer Section */
+.bg-footer {
+  background-color: #1c002d;
+  padding: 60px 20px;
+}
+footer input[type="email"] {
+  max-width: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+footer input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+footer a {
+  text-decoration: none;
+  color: #ccc;
+}
+footer a:hover {
+  color: #ffffff;
+}
+footer .btn {
+  border-color: #ccc;
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-card img {
+    height: 180px;
+  }
+  .carousel-inner img {
+    height: 220px;
+  }
+  .section {
+    padding: 80px 10px;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  footer form {
+    flex-direction: column;
+  }
+  footer input[type="email"] {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+/* Animasi Masuk */
+[data-aos] {
+  transition-duration: 1s !important;
+  transition-timing-function: ease-out !important;
+}
+
+#section1 {
+  min-height: 100vh;
+  padding-top: 100px;
+}
+@media (max-width: 768px) {
+  #section1 {
+    padding-top: 120px;
+  }
+  }
