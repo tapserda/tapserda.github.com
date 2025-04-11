@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'UnifrakturCook', cursive;
+  background: linear-gradient(to bottom right, #000000, #2c003e);
+  color: white;
+}
+
+.main-container {
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+}
+
+.logo {
+  width: 200px;
+  animation: spinAlternate 6s infinite ease-in-out;
+}
+
+.enter-btn {
+  font-size: 24px;
+  padding: 12px 36px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-family: 'UnifrakturCook', cursive;
+  transition: 0.3s ease;
+}
+
+.enter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes spinAlternate {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.cloud-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('../images/clouds.png') repeat;
+  opacity: 0.06;
+  filter: blur(20px);
+  z-index: 0;
+}
