@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Background Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Playfair Display', serif;
+      color: white;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      overflow: hidden;
+    }@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+.clouds {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  animation: floatClouds 60s linear infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+@keyframes floatClouds {
+  0% { background-position: 0 0; }
+  100% { background-position: 2000px 0; }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.floating-logo {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: floatLogo 6s ease-in-out infinite;
+  z-index: 10;
+  opacity: 0.8;
+  pointer-events: none; /* agar tidak mengganggu klik */
+}
+
+.floating-logo img {
+  width: 120px;
+  height: auto;
+}
+
+.enter-saiko {
+    font-size: 24px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-family: 'UnifrakturCook', cursive;
+  transition: 0.3s ease;
+  cursor:pointer;
+}
+
+@keyframes floatLogo {
+  0%   { transform: translate(-50%, -50%) translateY(0px); }
+  50%  { transform: translate(-50%, -50%) translateY(-20px); }
+  100% { transform: translate(-50%, -50%) translateY(0px); }
+}
+  </style>
+</head>
+<body>
+  <div class="floating-logo">
+  <img src="images/logo.png" alt="Logo" />
+</div>
+  <div id="tsparticles"></div>
+  <div class=""></div>  <div class="content">
+    <h1>What About Saiko?</h1>
+    <button class="enter-saiko more" onclick="fadeOutAndRedirect()" >enter</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script>
+    tsParticles.load("tsparticles", {
+      particles: {
+        number: {
+          value: 30,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        shape: {
+          type: "image",
+          image: [
+            { src: "images/logo.png", width: 100, height: 100 },
+            { src: "images/logo2.png", width: 100, height: 100 },
+            { src: "images/logo3.png", width: 100, height: 100 }
+          ]
+        },
+        size: {
+          value: 30,
+          random: true
+        },
+        opacity: {
+          value: 0.8
+        },
+        move: {
+          enable: true,
+          speed: 2
+        }
+      },
+      retina_detect: true,
+      background: {
+        color: "#000000"
+      }
+    });
+    function fadeOutAndRedirect() {
+  document.body.style.transition = 'opacity 1s ease-in-out';
+  document.body.style.opacity = 0;
+  setTimeout(() => {
+    window.location.href = "version2/shop.html";
+  }, 2000);
+}
+  </script></body>
+  </html>
